@@ -1,0 +1,33 @@
+{
+  "users": [
+    {
+      "email": "olivier@mail.com",
+      "password": "$2a$10$XecQsnS1F07Uxv4FL6RcGOZfBdQwIjQKMQoGc1Odf78zDk28ClXoC",
+      "createdAt": 1650011290626,
+      "id": 1
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
