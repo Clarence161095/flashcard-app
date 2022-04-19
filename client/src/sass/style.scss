@@ -1,0 +1,169 @@
+@import './variables';
+@import './mixins';
+
+.appCmp {
+  position: relative;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: rgba(44, 62, 80, 0.8);
+  color: white;
+  padding-right: 2%;
+  padding-left: 2%;
+  &-title {
+    @include displayCenter;
+    font-size: 1.5rem;
+  }
+}
+
+.pokemonBackgroundCmp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(44, 62, 80, 0.8);
+  z-index: -100;
+  &-pokemonImg {
+    color: white;
+    &::after {
+      content: ' - Remember this';
+      color: white;
+      font-weight: bold;
+      z-index: 1;
+    }
+  }
+}
+
+.loadingCmp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  @include displayCenter(row);
+  @include fullSize;
+  background-color: rgba(44, 62, 80, 0.5);
+  z-index: 1000;
+}
+
+.loadingPageCmp {
+  @include displayCenter;
+  @include fullSize;
+  background-color: rgba(52, 152, 219, 0.6);
+}
+
+.loginCmp {
+  @include displayCenter;
+  min-height: 50vh;
+  &-form {
+    @include displayCenter;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    transform: translateY(50%);
+    width: 100%;
+    max-width: 400px;
+    &-title {
+      font-size: 2rem;
+    }
+    &-input {
+      color: black;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      width: 100%;
+      border-radius: 5px;
+      border-color: transparent;
+    }
+    &-btnGroup {
+      &-login {
+        @include btn;
+      }
+      &-register {
+        @include btn(rgba(39, 174, 96, 1));
+      }
+    }
+  }
+}
+
+.homeCmp {
+  padding: 5px 5px 20px 5px;
+  &-control {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 0px 15px 0px;
+    & button {
+      @include divHover;
+    }
+  }
+  &-create {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    @include divHover(rgba(46, 204, 113, 0.3), 0.98);
+    & img {
+      width: 50px;
+    }
+    & div {
+      font-size: 1.3rem;
+    }
+  }
+  &-listItems {
+    display: flex;
+    flex-direction: column;
+    &-item {
+      @include divHover(transparent, 0.99);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      & p {
+        width: 50%;
+      }
+      &-process {
+        position: relative;
+        width: 30%;
+        max-width: 100px;
+        transform: translateY(-8px);
+        &-total {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -4px);
+        }
+      }
+    }
+  }
+}
+
+.createFolderCpm {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  & h1 {
+    text-align: center;
+    width: 100%;
+    color: rgba(46, 204, 113, 1);
+  }
+  & input {
+    margin-bottom: 10px;
+  }
+  & span {
+    padding: 1px 0 1px 0;
+    color: rgba(231, 76, 60, 1);
+  }
+  &-create {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    @include divHover(rgba(46, 204, 113, 0.3), 0.98);
+    & img {
+      width: 50px;
+    }
+    & div {
+      font-size: 1.34rem;
+    }
+  }
+}

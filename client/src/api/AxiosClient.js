@@ -8,5 +8,4 @@ const AxiosClient = axios.create({
   paramsSerializer: params => JSON.stringify(params),
 });
 
-
 export default AxiosClient;

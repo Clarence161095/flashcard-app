@@ -1,9 +1,6 @@
-/* eslint-disable react/style-prop-object */
-/* eslint-disable react-hooks/exhaustive-deps */
 import { Input, Tooltip } from 'antd';
 import HomeAPI from 'api/HomeApi';
 import DoughnutChart from 'components/DoughnutChart';
-import { DivHover } from 'components/Hover';
 import Loading from 'components/Loading';
 import _ from 'lodash';
 import React, { useEffect, useRef, useState } from 'react';
@@ -11,78 +8,29 @@ import { useNavigate } from 'react-router-dom';
 import addImg from '../assets/add.png';
 
 export const FolderItem = (props) => {
-  const hoverStyles = {
-    transform: 'scale(0.99)',
-  };
-
-  const styles = {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    name: {
-      width: '50%',
-    },
-    process: {
-      position: 'relative',
-      width: '30%',
-      maxWidth: '100px',
-      transform: 'translateY(-8px)',
-      total: {
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translateX(-50%) translateY(-4px)',
-      },
-    },
-  };
   return (
-    <DivHover hoverStyles={hoverStyles}>
-      <Tooltip placement="bottom" title={props.info.description}>
-        <div style={styles}>
-          <div style={styles.name}>{props.info.name}</div>
-          <div style={styles.process}>
-            <DoughnutChart process={props.info.process} />
-            <div style={styles.process.total}>
-              {props.info.process.reduce((prev, next) => {
-                return prev + next;
-              }, 0)}
-            </div>
+    <Tooltip placement="bottom" title={props.info.description}>
+      <div className="homeCmp-listItems-item">
+        <p>{props.info.name}</p>
+        <div className="homeCmp-listItems-item-process">
+          <DoughnutChart process={props.info.process} />
+          <div className="homeCmp-listItems-item-process-total">
+            {props.info.process.reduce((prev, next) => {
+              return prev + next;
+            }, 0)}
           </div>
         </div>
-      </Tooltip>
-    </DivHover>
+      </div>
+    </Tooltip>
   );
 };
 
 const Home = () => {
   const styles = {
-    control: {
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      margin: '10px 0px 15px 0px',
-      item: {
-        backgroundColor: 'rgba(108, 92, 231,1.0)',
-        padding: '10px 20px 10px 20px',
-        borderRadius: '5px',
-      },
-      listItem: {
-        display: 'flex',
-        flexDirection: 'column',
-      },
-    },
-    create: {
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'space-around',
-      alignItems: 'center',
-      img: {
-        width: '50px',
-      },
-      title: {
-        fontSize: '1.3rem',
-      },
+    chooseMenu: {
+      backgroundColor: 'rgba(108, 92, 231, 1)',
+      cursor: 'pointer',
+      boxShadow: '0px 0px 7px rgba(223, 230, 233, 0.5)',
     },
   };
 
@@ -145,36 +93,23 @@ const Home = () => {
   }, 500);
 
   return (
-    <div style={styles}>
+    <div className="homeCmp">
       {loading && <Loading />}
-      <div style={styles.control}>
-        <DivHover
-          onClick={() => {
-            setMenu('folders');
-            setKeySearch('');
-          }}
-          isClick={menu === 'folders' ? true : false}
-        >
-          Folder
-        </DivHover>
-        <DivHover
-          onClick={() => {
-            setMenu('sets');
-            setKeySearch('');
-          }}
-          isClick={menu === 'sets' ? true : false}
-        >
-          Study set
-        </DivHover>
-        <DivHover
-          onClick={() => {
-            setMenu('user');
-            setKeySearch('');
-          }}
-          isClick={menu === 'user' ? true : false}
-        >
-          User
-        </DivHover>
+      <div className="homeCmp-control">
+        {['folders', 'sets', 'user'].map((item) => {
+          return (
+            <button
+              key={item}
+              style={menu === item ? styles.chooseMenu : {}}
+              onClick={() => {
+                setMenu(item);
+                setKeySearch('');
+              }}
+            >
+              {_.startCase(_.toLower(item))}
+            </button>
+          );
+        })}
       </div>
 
       {(menu === 'folders' || menu === 'sets') && (
@@ -201,26 +136,23 @@ const Home = () => {
             ref={focusRef}
           />
 
-          <DivHover
-            hoverStyles={{ transform: 'scale(0.98)' }}
-            defaultStyles={{ backgroundColor: 'rgba(46, 204, 113,0.3)' }}
+          <div
+            className="homeCmp-create"
             onClick={() => {
               navigate('creat_folder');
             }}
           >
-            <div style={styles.create}>
-              <img style={styles.create.img} src={addImg} alt="Create Folder" />
-              <div style={styles.create.title}>
-                Create a new{' '}
-                {menu === 'folders' ? 'folder' : menu === 'sets' ? 'set' : ''}
-              </div>
-              <img style={styles.create.img} src={addImg} alt="Create Folder" />{' '}
+            <img src={addImg} alt="Create Folder" />
+            <div>
+              Create a new{' '}
+              {menu === 'folders' ? 'folder' : menu === 'sets' ? 'set' : ''}
             </div>
-          </DivHover>
+            <img src={addImg} alt="Create Folder" />
+          </div>
         </>
       )}
 
-      <div style={styles.listItem}>
+      <div className="homeCmp-listItems">
         {menu === 'folders' &&
           listFolders.map((info) => {
             return (
