@@ -88,7 +88,7 @@ const PokemonImage = (props) => {
   );
 };
 
-const PokemonBackground = () => {
+const PokemonBackground = (props) => {
   const [position, setPosition] = useState(0);
   useEffect(() => {
     setInterval(() => {
@@ -98,7 +98,7 @@ const PokemonBackground = () => {
 
   return (
     <div className="pokemonBackgroundCmp">
-      {_.times(9, Number).map((key) => {
+      {_.times(props.pokemonNumber, Number).map((key) => {
         return <PokemonImage key={key} position={position} />;
       })}
     </div>

@@ -26,7 +26,13 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 1.5rem;
+  background: #00f260;
+  background: -webkit-gradient(linear, left top, right top, from(#00f260), to(#0575e6));
+  background: linear-gradient(to right, #00f260, #0575e6);
+  font-size: 2rem;
+  width: 100vw;
+  -webkit-transform: translateX(-2%);
+          transform: translateX(-2%);
 }
 
 .pokemonBackgroundCmp {
@@ -109,7 +115,7 @@
   min-height: 50vh;
 }
 
-.loginCmp-form {
+.loginCmp_form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -124,7 +130,8 @@
       -ms-flex-align: center;
           align-items: center;
   border: 1px solid white;
-  padding: 10px;
+  background-color: rgba(41, 128, 185, 0.3);
+  padding: 15px;
   border-radius: 5px;
   -webkit-transform: translateY(50%);
           transform: translateY(50%);
@@ -132,20 +139,27 @@
   max-width: 400px;
 }
 
-.loginCmp-form-title {
+.loginCmp_form_title {
   font-size: 2rem;
 }
 
-.loginCmp-form-input {
+.loginCmp_form_input, .loginCmp_form_password {
   color: black;
   font-size: 1.5rem;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   width: 100%;
   border-radius: 5px;
   border-color: transparent;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-.loginCmp-form-btnGroup-login {
+.loginCmp_form span {
+  margin-bottom: 5px;
+  color: #d35400;
+}
+
+.loginCmp_form_btnGroup_login {
   margin: 5px 10px 5px 10px;
   padding: 5px 10px 5px 10px;
   border-color: transparent;
@@ -157,13 +171,19 @@
   min-width: 80px;
 }
 
-.loginCmp-form-btnGroup-login:hover {
+.loginCmp_form_btnGroup_login:hover {
   background-color: #9b59b6;
   -webkit-box-shadow: 0px 0px 2px white;
           box-shadow: 0px 0px 2px white;
 }
 
-.loginCmp-form-btnGroup-register {
+.loginCmp_form_btnGroup button:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.loginCmp_form_btnGroup_register {
   margin: 5px 10px 5px 10px;
   padding: 5px 10px 5px 10px;
   border-color: transparent;
@@ -175,7 +195,7 @@
   min-width: 80px;
 }
 
-.loginCmp-form-btnGroup-register:hover {
+.loginCmp_form_btnGroup_register:hover {
   background-color: #9b59b6;
   -webkit-box-shadow: 0px 0px 2px white;
           box-shadow: 0px 0px 2px white;

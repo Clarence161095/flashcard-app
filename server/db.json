@@ -5,6 +5,12 @@
       "password": "$2a$10$XecQsnS1F07Uxv4FL6RcGOZfBdQwIjQKMQoGc1Odf78zDk28ClXoC",
       "createdAt": 1650011290626,
       "id": 1
+    },
+    {
+      "email": "tuan@gmail.com",
+      "password": "$2a$10$fM7gS0sXM.h.mAoQCQJecuO2t.yukukabLe61jj89j6TqthNQk.gy",
+      "createdAt": 1650455607604,
+      "id": 2
     }
   ],
   "folders": [
@@ -12,14 +18,15 @@
       "id": 1,
       "name": "Từ vựng chuyên ngành",
       "description": "Từ vựng khi đọc tài liệu tiếng nhật",
-      "userId": 1
+      "userId": 2
     }
   ],
   "sets": [
     {
       "id": 1,
       "name": "Sets 1",
-      "description": "Sets 1"
+      "description": "Sets 1",
+      "userId": 2
     }
   ]
 }
