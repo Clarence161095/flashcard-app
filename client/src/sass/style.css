@@ -26,10 +26,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #00f260;
-  background: -webkit-gradient(linear, left top, right top, from(#00f260), to(#0575e6));
-  background: linear-gradient(to right, #00f260, #0575e6);
-  font-size: 2rem;
+  background: rgba(46, 213, 115, 0.5);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(46, 213, 115, 0.5)), to(rgba(55, 66, 250, 0.5)));
+  background: linear-gradient(to right, rgba(46, 213, 115, 0.5), rgba(55, 66, 250, 0.5));
+  font-size: 1.5rem;
   width: 100vw;
   -webkit-transform: translateX(-2%);
           transform: translateX(-2%);
@@ -205,7 +205,7 @@
   padding: 5px 5px 20px 5px;
 }
 
-.homeCmp-control {
+.homeCmp_control {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -216,10 +216,10 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 10px 0px 15px 0px;
+  margin: 10px 0px 0px 0px;
 }
 
-.homeCmp-control button {
+.homeCmp_control button {
   min-width: 90px;
   margin-top: 15px;
   padding: 10px 20px 10px 20px;
@@ -230,7 +230,7 @@
   background-color: transparent;
 }
 
-.homeCmp-control button:hover {
+.homeCmp_control button:hover {
   background-color: #6c5ce7;
   cursor: pointer;
   -webkit-box-shadow: 0px 0px 7px rgba(223, 230, 233, 0.5);
@@ -239,49 +239,30 @@
           transform: scale(0.95);
 }
 
-.homeCmp-create {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  min-width: 90px;
-  margin-top: 15px;
-  padding: 10px 20px 10px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 5px;
-  -webkit-box-shadow: 2px 2px 1px rgba(223, 230, 233, 0.3);
-          box-shadow: 2px 2px 1px rgba(223, 230, 233, 0.3);
-  background-color: rgba(46, 204, 113, 0.3);
+.homeCmp_control input {
+  margin-top: 5px;
+  width: 100%;
+  height: 50px;
+  border-radius: 4px;
+  border: transparent;
+  color: black;
+  font-size: 1.5rem;
+  padding: 5px;
+  text-align: center;
 }
 
-.homeCmp-create:hover {
-  background-color: #6c5ce7;
+.homeCmp_control img {
+  width: 40px;
   cursor: pointer;
-  -webkit-box-shadow: 0px 0px 7px rgba(223, 230, 233, 0.5);
-          box-shadow: 0px 0px 7px rgba(223, 230, 233, 0.5);
-  -webkit-transform: scale(0.98);
-          transform: scale(0.98);
+  margin: 10px;
 }
 
-.homeCmp-create img {
-  width: 50px;
+.homeCmp_control img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
-.homeCmp-create div {
-  font-size: 1.3rem;
-}
-
-.homeCmp-listItems {
+.homeCmp_listItems {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -291,7 +272,7 @@
           flex-direction: column;
 }
 
-.homeCmp-listItems-item {
+.homeCmp_listItems_item {
   min-width: 90px;
   margin-top: 15px;
   padding: 10px 20px 10px 20px;
@@ -315,7 +296,7 @@
           align-items: center;
 }
 
-.homeCmp-listItems-item:hover {
+.homeCmp_listItems_item:hover {
   background-color: #6c5ce7;
   cursor: pointer;
   -webkit-box-shadow: 0px 0px 7px rgba(223, 230, 233, 0.5);
@@ -324,11 +305,11 @@
           transform: scale(0.99);
 }
 
-.homeCmp-listItems-item p {
+.homeCmp_listItems_item p {
   width: 50%;
 }
 
-.homeCmp-listItems-item-process {
+.homeCmp_listItems_item_process {
   position: relative;
   width: 30%;
   max-width: 100px;
@@ -336,7 +317,7 @@
           transform: translateY(-8px);
 }
 
-.homeCmp-listItems-item-process-total {
+.homeCmp_listItems_item_process_total {
   position: absolute;
   top: 50%;
   left: 50%;

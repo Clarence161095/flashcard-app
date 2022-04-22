@@ -1,5 +1,5 @@
 import LoadingPage from 'components/LoadingPage';
-import CreateFolder from 'pages/CreateFolder';
+import CreateSet from 'pages/CreateSet';
 import Home from 'pages/Home';
 import Login from 'pages/Login';
 import PokemonBackground from 'pages/PokemonBackground';
@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route path="*" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/creat_folder" element={<CreateFolder />} />
+          <Route path="/creat_set" element={<CreateSet />} />
           <Route path="/loading" element={<LoadingPage />} />
           <Route path="/login" element={<Login />} />
         </Routes>

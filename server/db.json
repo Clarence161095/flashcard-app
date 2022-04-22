@@ -1,32 +1,133 @@
 {
   "users": [
     {
-      "email": "olivier@mail.com",
-      "password": "$2a$10$XecQsnS1F07Uxv4FL6RcGOZfBdQwIjQKMQoGc1Odf78zDk28ClXoC",
-      "createdAt": 1650011290626,
-      "id": 1
-    },
-    {
       "email": "tuan@gmail.com",
       "password": "$2a$10$fM7gS0sXM.h.mAoQCQJecuO2t.yukukabLe61jj89j6TqthNQk.gy",
       "createdAt": 1650455607604,
-      "id": 2
-    }
-  ],
-  "folders": [
-    {
-      "id": 1,
-      "name": "Từ vựng chuyên ngành",
-      "description": "Từ vựng khi đọc tài liệu tiếng nhật",
-      "userId": 2
+      "id": 1
     }
   ],
   "sets": [
     {
       "id": 1,
-      "name": "Sets 1",
-      "description": "Sets 1",
-      "userId": 2
+      "userId": 1,
+      "name": "Từ vựng chuyên ngành",
+      "description": "Từ vựng chuyên ngành khi đọc tài liệu tiếng nhật"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "name": "Từ điển",
+      "description": "Từ vựng được Craw từ trang web"
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "userId": 1,
+      "setId": 1,
+      "term": "確認",
+      "define": ["Sự xác nhận"],
+      "hiragana": "かくにん",
+      "kanji": "XÁC NHẬN",
+      "sample": [
+        {
+          "content": "sample 1",
+          "description": "Ví dụ 1"
+        },
+        {
+          "content": "sample 2",
+          "description": "Ví dụ 2"
+        }
+      ],
+      "process": 1
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "setId": 1,
+      "term": "公式",
+      "vietnamese": ["Chính thức","Công thức"],
+      "english": ["official"],
+      "hiragana": "かくにん",
+      "kanji": "CÔNG THỨC",
+      "sample": [
+        {
+          "content": "sample 1",
+          "description": "Ví dụ 1"
+        },
+        {
+          "content": "sample 2",
+          "description": "Ví dụ 2"
+        }
+      ],
+      "process": 8
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "setId": 1,
+      "folderId": 2,
+      "term": "公式",
+      "vietnamese": ["Chính thức","Công thức"],
+      "english": ["official"],
+      "hiragana": "かくにん",
+      "kanji": "CÔNG THỨC",
+      "sample": [
+        {
+          "content": "sample 1",
+          "description": "Ví dụ 1"
+        },
+        {
+          "content": "sample 2",
+          "description": "Ví dụ 2"
+        }
+      ],
+      "process": 13
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "setId": 1,
+      "folderId": 2,
+      "term": "公式",
+      "vietnamese": ["Chính thức","Công thức"],
+      "english": ["official"],
+      "hiragana": "かくにん",
+      "kanji": "CÔNG THỨC",
+      "sample": [
+        {
+          "content": "sample 1",
+          "description": "Ví dụ 1"
+        },
+        {
+          "content": "sample 2",
+          "description": "Ví dụ 2"
+        }
+      ],
+      "process": 21
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "setId": 1,
+      "folderId": 2,
+      "term": "公式",
+      "vietnamese": ["Chính thức","Công thức"],
+      "english": ["official"],
+      "hiragana": "かくにん",
+      "kanji": "CÔNG THỨC",
+      "sample": [
+        {
+          "content": "sample 1",
+          "description": "Ví dụ 1"
+        },
+        {
+          "content": "sample 2",
+          "description": "Ví dụ 2"
+        }
+      ],
+      "process": 20
     }
   ]
 }

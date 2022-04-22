@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import addImg from '../assets/add.png';
 import '../sass/style.css';
 
-const CreateFolder = () => {
+const CreateSet = () => {
   const [name, setName] = useState('');
   const [nameValidate, setNameValidate] = useState('');
   const [description, setDescription] = useState('');
@@ -22,7 +22,7 @@ const CreateFolder = () => {
     setDescriptionValidate('');
     if (name.length > 6) {
       if (name.length > 300) {
-        setNameValidate('Tên Folder có độ dài không quá 300 ký tự.');
+        setNameValidate('Tên Khóa học có độ dài không quá 300 ký tự.');
         return;
       }
       if (
@@ -30,11 +30,11 @@ const CreateFolder = () => {
           /(\b)(on\S+)(\s*)=|javascript|<(|\/|[^\/>][^>]+|\/[^>][^>]+)>/gi
         ) > -1
       ) {
-        setNameValidate('Tên Folder sai format');
+        setNameValidate('Tên Khóa học sai format');
         return;
       }
     } else {
-      setNameValidate('Tên Folder có độ dài ít nhất 6 ký tự.');
+      setNameValidate('Tên Khóa học có độ dài ít nhất 6 ký tự.');
       return;
     }
     if (checkValidation) {
@@ -44,9 +44,9 @@ const CreateFolder = () => {
 
   return (
     <div className="createFolderCpm">
-      <h1>Tạo mới một Folder</h1>
+      <h1>Tạo mới một khóa học</h1>
       <Input
-        placeholder="Tên Folder"
+        placeholder="Tên khóa học"
         status={nameValidate !== '' ? 'error' : ''}
         value={name}
         onChange={(e) => {
@@ -54,7 +54,7 @@ const CreateFolder = () => {
           setNameValidate('');
           if (name.length > 6) {
             if (name.length > 300) {
-              setNameValidate('Tên Folder có độ dài không quá 300 ký tự.');
+              setNameValidate('Tên Khóa học có độ dài không quá 300 ký tự.');
               return;
             }
             if (
@@ -62,11 +62,11 @@ const CreateFolder = () => {
                 /(\b)(on\S+)(\s*)=|javascript|<(|\/|[^\/>][^>]+|\/[^>][^>]+)>/gi
               ) > -1
             ) {
-              setNameValidate('Tên Folder sai format');
+              setNameValidate('Tên Khóa học sai format');
               return;
             }
           } else {
-            setNameValidate('Tên Folder có độ dài ít nhất 6 ký tự.');
+            setNameValidate('Tên Khóa học có độ dài ít nhất 6 ký tự.');
             return;
           }
         }}
@@ -94,4 +94,4 @@ const CreateFolder = () => {
   );
 };
 
-export default CreateFolder;
+export default CreateSet;
